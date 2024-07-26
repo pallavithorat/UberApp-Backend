@@ -1,5 +1,5 @@
-package com.codingshuttle.project.uber.uberApp.entities;
 
+package com.codingshuttle.project.uber.uberApp.entities;
 
 import com.codingshuttle.project.uber.uberApp.entities.enums.Role;
 import jakarta.persistence.*;
@@ -10,8 +10,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "app_user")
-//@Getter
-//@Setter
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -26,7 +26,5 @@ public class User {
 
     @ElementCollection(fetch = FetchType.LAZY)
     @Enumerated(EnumType.STRING)
-    private Set<Role>roles;
-
-
+    private Set<Role> roles;
 }
