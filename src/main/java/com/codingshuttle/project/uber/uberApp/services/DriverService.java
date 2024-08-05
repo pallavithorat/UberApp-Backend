@@ -3,6 +3,7 @@ package com.codingshuttle.project.uber.uberApp.services;
 import com.codingshuttle.project.uber.uberApp.dto.DriverDto;
 import com.codingshuttle.project.uber.uberApp.dto.RideDto;
 import com.codingshuttle.project.uber.uberApp.dto.RiderDto;
+import com.codingshuttle.project.uber.uberApp.entities.Driver;
 
 import java.util.List;
 //this code adds more details about rides and riders.
@@ -10,11 +11,11 @@ import java.util.List;
 // and the DriverService interface lists all the actions a driver can do, like accepting or canceling rides, and rating riders.
 public interface DriverService {
 
-    RideDto acceptRide(Long rideId);
+    RideDto acceptRide(Long rideRequestId);
 
     RideDto cancelRide(Long rideId);
 
-    RideDto startRide(Long rideId);
+    RideDto startRide(Long rideId,String otp);
 
     RideDto endRide(Long rideId);
 
@@ -23,4 +24,6 @@ public interface DriverService {
     DriverDto getMyProfile();
 
     List<RideDto> getAllMyRides();
+
+    Driver getCurrentDriver();
 }
